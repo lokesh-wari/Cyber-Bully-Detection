@@ -1,0 +1,54 @@
+1.Introduction to Cyber Bullying Tweet Classifier:
+Cyberbullying has become a serious concern on social media platforms, where offensive and harmful messages are often directed  toward individuals. 
+
+
+2.Objective of this Project:
+To detect cyberbullying in short text messages
+And to provide a simple web interface where users can input tweets and receive classification results.
+
+
+3.Methodology:
+Data Collection:
+A small sample dataset of tweets was manually created with the following structure:
+Offensive tweets: Labeled as 1 
+Non-offensive tweets: Labeled as 0 
+
+Preprocessing and Vectorization:
+Used CountVectorizer to convert text data into a bag-of-words representation.
+Removed punctuation and tokenized words to create feature vectors.
+
+Model Training:
+Applied Multinomial Naive Bayes classifier for text classification due to its efficiency in handling word frequency data.
+Trained using scikit-learn.
+
+Model Deployment:
+Saved the model and vectorizer using joblib.
+Built a lightweight Flask web application with a form to accept user input and display classification results.
+
+
+4.Findings:
+Even a small,curated dataset is sufficient to demonstrate the feasibility of a cyberbullying classifier.
+Naive Bayes performs well with short text and small datasets when using a bag-of-words model.
+Real-time classification is achievable with minimal latency due to the model's lightweight nature.
+The web app is responsive and easy to extend for future improvements.
+
+
+5.Challenges Faced:
+Data Scarcity: The dataset was small and manually generated. Larger, real-world datasets are needed for production use.
+
+Text Complexity: Sarcasm,slang,and context-dependent insults are difficult to detect using traditional models.
+
+Binary Classification: Only two classes were considered. In reality, cyberbullying can be multi-faceted (e.g., threats, harassment, hate speech).
+
+Model Generalization: The model performs well on the training data but may not generalize to unseen or complex tweets.
+
+No Preprocessing Pipeline: No advanced preprocessing (stemming, lemmatization, stopword removal) was implemented in this basic version.
+
+
+6.Future Enhancements:
+Integrate with Twitter API for real-time tweet monitoring.
+Use larger, labeled datasets like those from Kaggle or academic sources.
+Employ deep learning models like LSTM or BERT for context-aware classification.
+Include multi-label classification to detect types of bullying (e.g., racial, sexual, threats).
+Add an admin dashboard for reviewing flagged tweets and training data curation.
+
